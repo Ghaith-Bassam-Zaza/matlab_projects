@@ -1,0 +1,8 @@
+function A = mixit(tracks, weights)
+    tracks = (double(tracks)*2)/65535-1;
+    weights = double(weights);
+    tracks = tracks .* weights;
+    A = sum(tracks,2);
+    A = A - min(A);
+    A = (A .* 2)/ max(A)
+end
